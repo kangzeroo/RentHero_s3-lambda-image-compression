@@ -23,6 +23,8 @@ $ npm run add-s3-handler --s3_bucket="rentburrow3-images" --s3_suffix=".jpg" <br
 $ npm run update <br/>
 
 ## Setup considerations
+- You must set the timeout to 30 seconds because sometimes compression takes a while. Use this command: <br/>
+$ npm config set aws-lambda-image:timeout 30 <br/>
 - Be sure to have ~/.aws/credentials and ~/.aws/config setup with an IAM user that has permission to create new IAM roles (needed for creating the Lambda IAM role). Such as below: <br/>
 `{
     "Version": "2012-10-17",
